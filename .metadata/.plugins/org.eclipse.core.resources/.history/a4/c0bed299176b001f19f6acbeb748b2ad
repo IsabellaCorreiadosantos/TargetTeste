@@ -1,0 +1,5 @@
+package com.faturamento.teste;
+
+public class FaturamentoService {
+
+}

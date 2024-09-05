@@ -1,0 +1,22 @@
+package com.faturamento.teste;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TesteApplication implements CommandLineRunner {
+
+    @Autowired
+    private FaturamentoService faturamentoService;
+
+    public static void main(String[] args) {
+        SpringApplication.run(FaturamentoDistribuidoraApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        faturamentoService.processarFaturamento();
+    }
+}

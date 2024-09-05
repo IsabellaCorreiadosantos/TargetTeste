@@ -1,0 +1,44 @@
+package tarefa5;
+
+import java.util.Scanner;
+
+public class InversaoDeString {
+
+	public static void main(String[] args) {
+        // Solicitar a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma string para inverter: ");
+        String input = scanner.nextLine();
+        
+        // Chamar o método que inverte a string
+        String invertida = inverterString(input);
+        
+        // Exibir o resultado
+        System.out.println("String invertida: " + invertida);
+        
+        scanner.close();
+    }
+
+    // Método para inverter a string sem usar funções prontas
+    public static String inverterString(String input) {
+        // Converter a string em um array de caracteres
+        char[] caracteres = input.toCharArray();
+        int inicio = 0;
+        int fim = caracteres.length - 1;
+
+        
+        while (inicio < fim) {
+            
+            char temp = caracteres[inicio];
+            caracteres[inicio] = caracteres[fim];
+            caracteres[fim] = temp;
+
+            
+            inicio++;
+            fim--;
+        }
+
+        
+        return new String(caracteres);
+    }
+}
